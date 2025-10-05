@@ -1,0 +1,11 @@
+{
+  "id": "faq",
+  "title": "Preguntas frecuentes",
+  "items": [
+    { "q": "¿Cómo trabajan los proyectos a medida?", "a": "Discovery, alcance y entregas iterativas con hitos claros." },
+    { "q": "¿Se integran con sistemas existentes?", "a": "Sí, diseñamos APIs e integramos con tu stack actual." },
+    { "q": "¿Ofrecen soporte?", "a": "Sí, con planes de soporte y SLAs acordados." },
+    { "q": "¿Tiempos y costos?", "a": "Depende del alcance; se estima en la cotización inicial." },
+    { "q": "¿Implementan IA?", "a": "Podemos integrar IA en formularios, búsqueda y automatizaciones." }
+  ]
+}

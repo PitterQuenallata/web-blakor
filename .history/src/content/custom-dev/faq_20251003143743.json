@@ -1,0 +1,7 @@
+{
+  "title": "Preguntas frecuentes",
+  "items": [
+    { "q": "¿Trabajan por alcance o por horas?", "a": "Podemos trabajar por fases cerradas o bolsa de horas, según convenga." },
+    { "q": "¿Llevan hosting y despliegue?", "a": "Podemos gestionar CI/CD y alojamiento (Vercel u otra infraestructura)." }
+  ]
+}

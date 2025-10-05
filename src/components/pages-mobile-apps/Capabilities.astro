@@ -1,0 +1,25 @@
+---
+import data from "../../content/mobile-apps/capabilities.json";
+---
+<section id="capabilities" class="section-spacing">
+  <div class="container mx-auto">
+    <h2 class="text-center mb-16">{data.title}</h2>
+    <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {data.items.map((i) => (
+        <li class="card">
+          <p class="text-text-primary">{i}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .section-spacing {
+    padding: 8rem 2rem;
+  }
+  
+  ul {
+    list-style: none;
+  }
+</style>

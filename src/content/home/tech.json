@@ -1,0 +1,25 @@
+{
+  "id": "tech",
+  "title": "Tegnologías que usamos",
+  "subtitle": "Stack moderno para rendimiento, seguridad y escalabilidad.",
+  "technologies": [
+    { "slug": "astro", "label": "Astro" },
+    { "slug": "react", "label": "React" },
+    { "slug": "tailwindcss", "label": "Tailwind CSS" },
+    { "slug": "typescript", "label": "TypeScript" },
+    { "slug": "vercel", "label": "Vercel" },
+    { "slug": "nodedotjs", "label": "Node.js" },
+    { "slug": "laravel", "label": "Laravel" },
+    { "slug": "filament", "label": "Filament" },
+    { "slug": "mysql", "label": "MySQL" },
+    { "slug": "mongodb", "label": "MongoDB" },
+    { "slug": "firebase", "label": "Firebase" },
+    { "slug": "github", "label": "GitHub" },
+    { "slug": "jira", "label": "Jira" },
+    { "slug": "nextdotjs", "label": "Next.js" },
+    { "slug": "react", "label": "React Native" },
+    { "slug": "flutter", "label": "Flutter" },
+    { "slug": "flutterflow", "label": "FlutterFlow" },
+    { "slug": "dart", "label": "Dart" }
+  ]
+}

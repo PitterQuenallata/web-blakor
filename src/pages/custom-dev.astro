@@ -1,0 +1,65 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro";
+import NavCustomDev from "../components/pages-custom-dev/NavCustomDev.astro";
+import HeroCustomDev from "../components/pages-custom-dev/HeroCustomDev.astro";
+import ProcessSteps from "../components/pages-custom-dev/ProcessSteps.astro";
+import TechGrid from "../components/pages-custom-dev/TechGrid.astro";
+import FAQCustomDev from "../components/pages-custom-dev/FAQCustomDev.astro";
+
+// 👇 Importa el MD como componente
+import Overview from "../content/custom-dev/overview.md";
+
+import cases from "../content/custom-dev/cases.json";
+import contact from "../content/custom-dev/contact.json";
+---
+
+<ServiceLayout>
+  <div slot="subnav"><NavCustomDev /></div>
+
+  <HeroCustomDev />
+  
+  <section id="overview" class="section-spacing">
+    <div class="container mx-auto max-w-4xl">
+      <article class="prose"><Overview /></article>
+    </div>
+  </section>
+
+  <ProcessSteps />
+  <TechGrid />
+
+  <section id="cases" class="section-spacing bg-surface/30">
+    <div class="container mx-auto">
+      <h2 class="text-center mb-16">{cases.title}</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {cases.items.map((c) => (
+          <article class="card">
+            <h3 class="mb-4">{c.title}</h3>
+            <p class="text-text-secondary mb-4">{c.summary}</p>
+            <strong class="text-brand-primary">{c.kpi}</strong>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQCustomDev />
+
+  <section id="contact" class="section-spacing">
+    <div class="container mx-auto text-center max-w-2xl">
+      <h2 class="mb-4">{contact.title}</h2>
+      <p class="text-text-secondary text-lg mb-8">{contact.subtitle}</p>
+      <a href={contact.cta.href} class="btn btn-primary">{contact.cta.label}</a>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .section-spacing {
+    padding: 8rem 2rem;
+  }
+  
+  .prose {
+    color: #a3a3a3;
+    line-height: 1.8;
+  }
+</style>

@@ -1,0 +1,10 @@
+{
+  "title": "Stacks móviles",
+  "options": [
+    { "name": "React Native", "desc": "Código compartido iOS/Android con ecosistema maduro." },
+    { "name": "Flutter", "desc": "UI de alto rendimiento y consistencia entre plataformas." },
+    { "name": "FlutterFlow", "desc": "Prototipado rápido con opción de exportar código." },
+    { "name": "Nativo + Node/REST", "desc": "Para acceso profundo a capacidades del dispositivo." },
+    { "name": "Dart", "desc": "Lenguaje base de Flutter para apps eficientes." }
+  ]
+}

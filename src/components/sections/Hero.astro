@@ -1,0 +1,145 @@
+---
+import hero from "../../content/home/hero.json";
+import { ArrowRight } from 'lucide-react';
+import AnimatedShaderBackground from '../ui/AnimatedShaderBackground.tsx';
+---
+<section id="home" class="hero-section">
+  <AnimatedShaderBackground client:load />
+  <div class="hero-glow" aria-hidden="true"></div>
+  
+  <div class="container mx-auto">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-text">{hero.badge}</span>
+      </div>
+
+      <h1 class="hero-title">{hero.title}</h1>
+      <p class="hero-subtitle">{hero.subtitle}</p>
+
+      <div class="hero-actions">
+        <a href={hero.primaryCTA.href} class="btn btn-primary">{hero.primaryCTA.label}</a>
+        <a href={hero.secondaryCTA.href} class="btn btn-secondary">{hero.secondaryCTA.label}</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="hero-image-gradient" aria-hidden="true"></div>
+      <div class="hero-image-container">
+        <img
+          src="/bannerDashboard.webp"
+          alt="SyncroTech Dashboard"
+          class="hero-image"
+          width="2700"
+          height="1440"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2rem 8rem;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 56rem;
+    margin: 0 auto 3rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 2rem;
+    background: rgba(61, 123, 255, 0.1);
+    border: 1px solid rgba(61, 123, 255, 0.3);
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .badge-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    max-width: 42rem;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: 4rem;
+    overflow: hidden;
+  }
+
+  .hero-image-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, transparent 35%, var(--color-bg) 100%);
+    pointer-events: none;
+  }
+
+  .hero-image-container {
+    position: relative;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03),
+                0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: calc(var(--radius-card) - 4px);
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 6rem 1rem 4rem;
+    }
+
+    .hero-image-wrapper {
+      margin-top: 2rem;
+    }
+  }
+</style>

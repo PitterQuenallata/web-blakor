@@ -1,0 +1,14 @@
+---
+import data from "../../content/mobile-apps/stacks.json";
+---
+<section aria-labelledby="stacks-title">
+  <h2 id="stacks-title">{data.title}</h2>
+  <ul>
+    {data.options.map((o) => (
+      <li>
+        <strong>{o.name}</strong>
+        <p>{o.desc}</p>
+      </li>
+    ))}
+  </ul>
+</section>

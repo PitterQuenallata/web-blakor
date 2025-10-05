@@ -1,0 +1,15 @@
+{
+  "id": "testimonials",
+  "title": "Lo que dicen nuestros clientes",
+  "items": [
+    { "quote": "Entregaron rápido y con calidad. El equipo superó nuestras expectativas.", "author": "María P.", "role": "COO, Retail", "image": "https://randomuser.me/api/portraits/women/1.jpg" },
+    { "quote": "Propusieron mejoras valiosas que transformaron nuestro flujo de trabajo.", "author": "Jorge L.", "role": "CTO, Logística", "image": "https://randomuser.me/api/portraits/men/2.jpg" },
+    { "quote": "Cargan volando y se ve increíble. La mejor inversión que hicimos.", "author": "Ana S.", "role": "Marketing Manager", "image": "https://randomuser.me/api/portraits/women/3.jpg" },
+    { "quote": "El soporte técnico es excepcional, siempre disponibles para ayudar.", "author": "Carlos M.", "role": "CEO, Tech Startup", "image": "https://randomuser.me/api/portraits/men/4.jpg" },
+    { "quote": "Implementación rápida y sin complicaciones. Muy profesionales.", "author": "Laura G.", "role": "Project Manager", "image": "https://randomuser.me/api/portraits/women/5.jpg" },
+    { "quote": "La plataforma mejoró nuestra productividad en un 40%. Increíble.", "author": "Roberto F.", "role": "Operations Director", "image": "https://randomuser.me/api/portraits/men/6.jpg" },
+    { "quote": "Diseño intuitivo y funcionalidades potentes. Exactamente lo que necesitábamos.", "author": "Patricia V.", "role": "UX Designer", "image": "https://randomuser.me/api/portraits/women/7.jpg" },
+    { "quote": "Excelente relación calidad-precio. Recomendado al 100%.", "author": "Diego R.", "role": "Finance Manager", "image": "https://randomuser.me/api/portraits/men/8.jpg" },
+    { "quote": "Nuestras ventas aumentaron significativamente después de implementar su solución.", "author": "Sofía T.", "role": "Sales Director", "image": "https://randomuser.me/api/portraits/women/9.jpg" }
+  ]
+}

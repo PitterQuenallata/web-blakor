@@ -1,0 +1,123 @@
+---
+import tech from "../../content/home/tech.json";
+import IconCloud from "../ui/IconCloud";
+
+const slugs = tech.technologies.map(t => t.slug);
+---
+<section id="tech" class="tech-section">
+  <div class="tech-glow"></div>
+  
+  <div class="container mx-auto relative z-10">
+    <div class="text-center mb-20">
+      <h2 class="tech-title">{tech.title}</h2>
+      <p class="tech-subtitle">{tech.subtitle}</p>
+    </div>
+    
+    <div class="cloud-container">
+      <IconCloud client:load iconSlugs={slugs} />
+    </div>
+
+    <div class="ticker-wrapper">
+      <p class="ticker-title">Trusted by</p>
+      <div class="ticker-track">
+        {[...Array(3)].map(() => (
+          tech.technologies.map((t) => (
+            <span class="ticker-item">{t.label}</span>
+          ))
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-section {
+    position: relative;
+    padding: 8rem 2rem;
+    overflow: hidden;
+  }
+
+  .tech-glow {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.15) 0%, rgba(37, 99, 235, 0.1) 40%, transparent 70%);
+    pointer-events: none;
+    filter: blur(80px);
+  }
+
+  .tech-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 38, 38, 0.8) 50%, rgba(162, 28, 175, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .tech-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .cloud-container {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 400px;
+    margin: 2 auto 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ticker-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0 2rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .ticker-title {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 3rem;
+    animation: ticker 40s linear infinite;
+    width: max-content;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.333%); }
+  }
+
+  .ticker-item {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .cloud-container {
+      height: 400px;
+    }
+  }
+</style>

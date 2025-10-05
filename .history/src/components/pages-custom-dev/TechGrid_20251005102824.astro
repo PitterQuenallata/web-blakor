@@ -1,0 +1,9 @@
+---
+import data from "../../content/custom-dev/tech.json";
+---
+<section aria-labelledby="techgrid-title">
+  <h2 id="techgrid-title">{data.title}</h2>
+  <ul>
+    {data.items.map((t) => <li>{t}</li>)}
+  </ul>
+</section>

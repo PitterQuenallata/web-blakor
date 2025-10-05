@@ -1,0 +1,201 @@
+---
+import tech from "../../content/home/tech.json";
+---
+<section id="tech" class="tech-section">
+  <div class="tech-glow"></div>
+  
+  <div class="container mx-auto relative z-10">
+    <div class="text-center mb-20">
+      <h2 class="tech-title">{tech.title}</h2>
+      <p class="tech-subtitle">{tech.subtitle}</p>
+    </div>
+    
+    <div class="orbit-container">
+      <div class="orbit-sun" aria-hidden="true"></div>
+      
+      <div class="orbit-ring">
+        {tech.technologies.slice(0, 12).map((t, i) => {
+          const angle = (i / 12) * 180; // Semicírculo: 0° a 180°
+          return (
+            <div class="orbit-item" style={`--angle: ${angle}deg;`} data-tech={t.slug}>
+              <img src={`https://cdn.simpleicons.org/${t.slug}/ffffff`} alt={t.label} class="tech-svg" />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <div class="ticker-wrapper">
+      <p class="ticker-title">Trusted by</p>
+      <div class="ticker-track">
+        {[...Array(3)].map(() => (
+          tech.technologies.map((t) => (
+            <span class="ticker-item">{t.label}</span>
+          ))
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-section {
+    position: relative;
+    padding: 8rem 2rem;
+    overflow: hidden;
+  }
+
+  .tech-glow {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.15) 0%, rgba(37, 99, 235, 0.1) 40%, transparent 70%);
+    pointer-events: none;
+    filter: blur(80px);
+  }
+
+  .orbit-sun {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 450px;
+    height: 450px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(126, 34, 206, 0.35), rgba(37, 99, 235, 0.2) 55%, transparent 70%);
+    filter: blur(30px);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .tech-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 38, 38, 0.8) 50%, rgba(162, 28, 175, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .tech-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .orbit-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin: 0 auto 6rem;
+    overflow: hidden;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 700px;
+    height: 700px;
+    transform: translateX(-50%);
+    animation: orbit-rotate 36s linear infinite;
+    z-index: 4;
+  }
+
+  @keyframes orbit-rotate {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg); }
+  }
+
+  .orbit-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    transform: rotate(var(--angle)) translateY(-350px);
+    will-change: transform;
+    animation: counter-rotate 36s linear infinite;
+  }
+
+  @keyframes counter-rotate {
+    from { transform: rotate(var(--angle)) translateY(-350px) rotate(0deg); }
+    to   { transform: rotate(var(--angle)) translateY(-350px) rotate(-360deg); }
+  }
+
+  .tech-svg {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1) opacity(0.8);
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+
+  .orbit-item:hover .tech-svg {
+    filter: brightness(1) invert(0);
+    transform: scale(1.12);
+  }
+
+  .ticker-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0 2rem;
+    border-top: 1px solid var(--color-line);
+    z-index: 7;
+  }
+
+  .ticker-title {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 3rem;
+    animation: ticker 40s linear infinite;
+    width: max-content;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-33.333%); }
+  }
+
+  .ticker-item {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    .orbit-container { height: 300px; max-width: 600px; }
+    .orbit-ring { width: 500px; height: 500px; }
+    .orbit-item { 
+      width: 44px; 
+      height: 44px; 
+      margin-left: -22px; 
+      margin-top: -22px; 
+      transform: rotate(var(--angle)) translateY(-250px);
+    }
+    @keyframes counter-rotate {
+      from { transform: rotate(var(--angle)) translateY(-250px) rotate(0deg); }
+      to   { transform: rotate(var(--angle)) translateY(-250px) rotate(-360deg); }
+    }
+    .orbit-sun { width: 300px; height: 300px; }
+  }
+</style>

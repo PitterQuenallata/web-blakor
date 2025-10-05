@@ -1,0 +1,15 @@
+---
+import data from "../../content/mobile-apps/faq.json";
+---
+
+<section id="faq" aria-labelledby="faqmobile-title">
+  <h2 id="faqmobile-title">{data.title}</h2>
+  <dl>
+    {data.items.map((item) => (
+      <>
+        <dt>{item.q}</dt>
+        <dd>{item.a}</dd>
+      </>
+    ))}
+  </dl>
+</section>

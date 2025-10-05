@@ -1,0 +1,88 @@
+---
+import data from "../../content/home/testimonials.json";
+import { TestimonialsColumn } from "../ui/TestimonialsColumn";
+
+const firstColumn = data.items.slice(0, 3);
+const secondColumn = data.items.slice(3, 6);
+const thirdColumn = data.items.slice(6, 9);
+---
+<section id="testimonials" class="testimonials-section">
+  <div class="container mx-auto relative z-10">
+    <div class="testimonials-header">
+      <div class="inline-block px-4 py-1 border border-line rounded-full text-sm mb-4">Testimonios</div>
+      <h2 class="testimonials-title">{data.title}</h2>
+      <p class="testimonials-subtitle">Mira lo que nuestros clientes tienen que decir sobre nosotros.</p>
+    </div>
+
+    <div class="testimonials-columns">
+      <TestimonialsColumn client:load testimonials={firstColumn} duration={15} />
+      <TestimonialsColumn client:load testimonials={secondColumn} className="hidden md:block" duration={19} />
+      <TestimonialsColumn client:load testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    position: relative;
+    padding: 8rem 2rem;
+    overflow: hidden;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+  }
+
+  .testimonials-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 38, 38, 0.8) 50%, rgba(162, 28, 175, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .testimonials-subtitle {
+    color: var(--color-text-secondary);
+  }
+
+  .testimonials-columns {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    max-height: 740px;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+  }
+
+  .testimonials-columns > div {
+    opacity: 0;
+    animation: fadeInColumn 1s ease-out forwards;
+  }
+
+  .testimonials-columns > div:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+
+  .testimonials-columns > div:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  .testimonials-columns > div:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes fadeInColumn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

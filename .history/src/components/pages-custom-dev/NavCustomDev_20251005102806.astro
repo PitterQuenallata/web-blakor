@@ -1,0 +1,9 @@
+---
+import nav from "../../content/site/navigation.json";
+const items = nav.customDev;
+---
+<nav aria-label="Custom Dev">
+  <ul>
+    {items.map((i) => <li><a href={i.href}>{i.label}</a></li>)}
+  </ul>
+</nav>

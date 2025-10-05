@@ -1,0 +1,9 @@
+{
+  "id": "testimonials",
+  "title": "Lo que dicen nuestros clientes",
+  "items": [
+    { "quote": "Entregaron rápido y con calidad.", "author": "María P.", "role": "COO, Retail" },
+    { "quote": "Propusieron mejoras valiosas.", "author": "Jorge L.", "role": "CTO, Logística" },
+    { "quote": "Cargan volando y se ve increíble.", "author": "Ana S.", "role": "Marketing Manager" }
+  ]
+}

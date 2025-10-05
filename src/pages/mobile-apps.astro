@@ -1,0 +1,81 @@
+---
+import ServiceLayout from "../layouts/ServiceLayout.astro";
+import NavMobileApps from "../components/pages-mobile-apps/NavMobileApps.astro";
+import HeroMobile from "../components/pages-mobile-apps/HeroMobile.astro";
+import Capabilities from "../components/pages-mobile-apps/Capabilities.astro";
+import StacksShowcase from "../components/pages-mobile-apps/StacksShowcase.astro";
+
+// 👇 Importa el MD como componente
+import Overview from "../content/mobile-apps/overview.md";
+
+import process from "../content/mobile-apps/process.json";
+import faq from "../content/mobile-apps/faq.json";
+import contact from "../content/mobile-apps/contact.json";
+---
+
+<ServiceLayout>
+  <div slot="subnav"><NavMobileApps /></div>
+
+  <HeroMobile />
+  
+  <section id="overview" class="section-spacing">
+    <div class="container mx-auto max-w-4xl">
+      <article class="prose"><Overview /></article>
+    </div>
+  </section>
+
+  <Capabilities />
+  <StacksShowcase />
+
+  <section id="process" class="section-spacing">
+    <div class="container mx-auto">
+      <h2 class="text-center mb-16">{process.title}</h2>
+      <ol class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {process.steps.map((s, i) => (
+          <li class="card">
+            <span class="text-brand-secondary text-3xl font-bold mb-4 block">{i + 1}</span>
+            <h3 class="text-lg mb-2">{s.title}</h3>
+            <p class="text-text-secondary text-sm">{s.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" class="section-spacing bg-surface/30">
+    <div class="container mx-auto max-w-3xl">
+      <h2 class="text-center mb-16">{faq.title}</h2>
+      <dl class="space-y-6">
+        {faq.items.map((i) => (
+          <div class="card">
+            <dt class="text-text-primary font-semibold mb-2">{i.q}</dt>
+            <dd class="text-text-secondary">{i.a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="section-spacing">
+    <div class="container mx-auto text-center max-w-2xl">
+      <h2 class="mb-4">{contact.title}</h2>
+      <p class="text-text-secondary text-lg mb-8">{contact.subtitle}</p>
+      <a href={contact.cta.href} class="btn btn-primary">{contact.cta.label}</a>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .section-spacing {
+    padding: 8rem 2rem;
+  }
+  
+  ol {
+    list-style: none;
+  }
+  
+  .prose {
+    color: #a3a3a3;
+    line-height: 1.8;
+  }
+</style>

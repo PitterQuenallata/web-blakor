@@ -1,0 +1,10 @@
+{
+  "title": "Capacidades",
+  "items": [
+    "Autenticación segura",
+    "Push notifications",
+    "Offline-first (si aplica)",
+    "Monitoreo de rendimiento",
+    "A/B testing (opcional)"
+  ]
+}

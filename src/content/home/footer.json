@@ -1,0 +1,38 @@
+{
+  "brand": {
+    "name": "SyncroTech",
+    "description": "Soluciones tecnológicas innovadoras para impulsar tu negocio digital."
+  },
+  "sections": [
+    {
+      "title": "Servicios",
+      "links": [
+        { "label": "Desarrollo Web", "href": "/servicios/desarrollo-web" },
+        { "label": "Aplicaciones Móviles", "href": "/servicios/apps-moviles" },
+        { "label": "SaaS Personalizado", "href": "/servicios/saas" },
+        { "label": "Consultoría", "href": "/servicios/consultoria" }
+      ]
+    },
+    {
+      "title": "Empresa",
+      "links": [
+        { "label": "Nosotros", "href": "/nosotros" },
+        { "label": "Portafolio", "href": "/portafolio" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Contacto", "href": "/contact" }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacidad", "href": "/legal/privacidad" },
+        { "label": "Términos", "href": "/legal/terminos" }
+      ]
+    }
+  ],
+  "social": [
+    { "name": "LinkedIn", "href": "https://linkedin.com/company/syncrotech" },
+    { "name": "Twitter", "href": "https://twitter.com/syncrotech" },
+    { "name": "GitHub", "href": "https://github.com/syncrotech" }
+  ]
+}

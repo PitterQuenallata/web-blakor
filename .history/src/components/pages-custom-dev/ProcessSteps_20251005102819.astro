@@ -1,0 +1,9 @@
+---
+import data from "../../content/custom-dev/process.json";
+---
+<section aria-labelledby="process-title">
+  <h2 id="process-title">{data.title}</h2>
+  <ol>
+    {data.steps.map((s) => <li><strong>{s.title}:</strong> {s.desc}</li>)}
+  </ol>
+</section>

@@ -1,0 +1,14 @@
+---
+import data from "../../content/home/testimonials.json";
+---
+<section aria-labelledby="testimonials-title">
+  <h2 id="testimonials-title">{data.title}</h2>
+  <ul>
+    {data.items.map((t) => (
+      <li>
+        <blockquote>“{t.quote}”</blockquote>
+        <cite>{t.author} — {t.role}</cite>
+      </li>
+    ))}
+  </ul>
+</section>

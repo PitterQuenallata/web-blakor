@@ -1,0 +1,113 @@
+---
+import data from "../../content/home/faq.json";
+---
+<section id="faq" class="faq-section">
+  <div class="container mx-auto max-w-4xl">
+    <div class="text-center mb-20">
+      <h2 class="faq-title">{data.title}</h2>
+      <p class="text-text-secondary mt-6">Encuentra respuestas rápidas a las preguntas más comunes sobre nuestros servicios.</p>
+    </div>
+
+    <div class="faq-accordion">
+      {data.items.map((item) => (
+        <details class="faq-item">
+          <summary class="faq-question">
+            {item.q}
+            <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>{item.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <p class="text-center text-text-secondary mt-8">
+      ¿No encuentras lo que buscas? <a href="#contact" class="text-white hover:underline font-medium">Contáctanos</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    position: relative;
+    padding: 8rem 2rem;
+  }
+
+  .faq-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 38, 38, 0.8) 50%, rgba(162, 28, 175, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-accordion {
+    background: linear-gradient(to bottom, var(--color-surface), rgba(18, 20, 26, 0.8));
+    border: 2px solid var(--color-line);
+    border-radius: var(--radius-card);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 12px 48px rgba(220, 38, 38, 0.08), 0 20px 64px rgba(162, 28, 175, 0.06);
+  }
+
+  .faq-item {
+    border-bottom: 2px solid var(--color-line);
+    padding: 1rem 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    list-style: none;
+    user-select: none;
+    transition: color 0.2s ease;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    color: #ffffff;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding-top: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

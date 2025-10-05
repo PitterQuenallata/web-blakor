@@ -1,0 +1,17 @@
+---
+import Navbar from "../components/nav/Navbar.astro";
+import Footer from "../components/footer/Footer.astro";
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <slot name="head" />
+    <title>SyncroTech</title>
+  </head>
+  <body>
+    <header><Navbar /></header>
+    <main><slot /></main>
+    <footer><Footer /></footer>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "title": "Nuestro proceso",
+  "steps": [
+    { "title": "Discovery", "desc": "Objetivos, usuarios y restricciones." },
+    { "title": "Diseño", "desc": "Arquitectura, UI/UX y plan de entregas." },
+    { "title": "Construcción", "desc": "Iteraciones cortas con revisiones frecuentes." },
+    { "title": "Lanzamiento", "desc": "Despliegue, métricas y soporte post-release." }
+  ],
+  "note": "Scroll reveal por step; progress bar on scroll opcional."
+}

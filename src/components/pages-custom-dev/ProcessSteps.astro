@@ -1,0 +1,27 @@
+---
+import data from "../../content/custom-dev/process.json";
+---
+<section id="process" class="section-spacing">
+  <div class="container mx-auto">
+    <h2 class="text-center mb-16">{data.title}</h2>
+    <ol class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {data.steps.map((s, i) => (
+        <li class="card">
+          <span class="text-brand-primary text-3xl font-bold mb-4 block">{i + 1}</span>
+          <h3 class="text-lg mb-2">{s.title}</h3>
+          <p class="text-text-secondary text-sm">{s.desc}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .section-spacing {
+    padding: 8rem 2rem;
+  }
+  
+  ol {
+    list-style: none;
+  }
+</style>

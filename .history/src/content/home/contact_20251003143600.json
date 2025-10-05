@@ -1,0 +1,14 @@
+{
+  "id": "contact",
+  "title": "Contacto",
+  "subtitle": "Te respondemos a la brevedad.",
+  "channels": [
+    { "type": "email", "label": "hola@syncrotech.com", "href": "mailto:hola@syncrotech.com" },
+    { "type": "whatsapp", "label": "+591 XXX XXX XX", "href": "https://wa.me/591XXXXXXXXX" }
+  ],
+  "finalCTA": {
+    "title": "¿Listo para empezar?",
+    "subtitle": "Cuéntanos tus objetivos y armamos un plan juntos.",
+    "primary": { "label": "Solicitar cotización", "href": "/#contact" }
+  }
+}

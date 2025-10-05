@@ -1,0 +1,11 @@
+---
+import nav from "../../content/site/navigation.json";
+---
+<nav aria-label="Global">
+  <a href="/#home">SyncroTech</a>
+  <ul>
+    {nav.global.map((i) => (
+      <li><a href={i.href}>{i.label}</a></li>
+    ))}
+  </ul>
+</nav>

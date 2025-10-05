@@ -1,0 +1,241 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --color-bg: #0B0C10;
+  --color-surface: #12141A;
+  --color-text-primary: rgba(255, 255, 255, 0.92);
+  --color-text-secondary: #9AA0A6;
+  --color-line: rgba(255, 255, 255, 0.06);
+  --color-accent-blue: #3D7BFF;
+  --color-accent-cyan: #29D3FF;
+  --color-accent-magenta: #B249F8;
+  --shadow-glow-blue: 0 0 24px rgba(61, 123, 255, 0.25);
+  --radius-card: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fondo con spotlight superior intenso */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 40% 50% at 50% 0%, rgba(220, 38, 38, 0.25) 0%, rgba(162, 28, 175, 0.15) 30%, transparent 70%),
+    radial-gradient(ellipse 30% 50% at 0% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 50% at 100% 50%, rgba(126, 34, 206, 0.08) 0%, transparent 50%);
+  z-index: -2;
+}
+
+/* Grain sutil */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+/* Links */
+a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Espaciado uniforme */
+main {
+  padding-top: 0;
+}
+
+/* Cards - Darkrise */
+.card {
+  background: linear-gradient(to bottom, var(--color-surface), rgba(18, 20, 26, 0.8));
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.card:hover {
+  border-color: rgba(220, 38, 38, 0.3);
+  transform: translateY(-3px);
+}
+
+
+
+/* Botones - Darkrise con corner-glow */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1px solid var(--color-line);
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.btn-primary {
+  background: linear-gradient(135deg, #3D7BFF, #29D3FF);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5089FF, #3DDDFF);
+  box-shadow: 0 0 24px rgba(61, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+
+
+.btn-secondary {
+  background: rgba(61, 123, 255, 0.1);
+  color: var(--color-text-primary);
+  border-color: rgba(61, 123, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(61, 123, 255, 0.2);
+  border-color: rgba(61, 123, 255, 0.5);
+}
+
+
+
+.btn-ghost {
+  background: transparent;
+  color: #a3a3a3;
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Glow text */
+.glow-text {
+  text-shadow: 0 0 20px currentColor;
+}
+
+/* Utilidades - Darkrise */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}

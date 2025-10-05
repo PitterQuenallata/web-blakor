@@ -1,0 +1,6 @@
+{
+  "title": "¿Hablamos de tu app?",
+  "subtitle": "Te ayudamos a elegir el stack y el roadmap ideal.",
+  "cta": { "label": "Solicitar cotización", "href": "/#contact" },
+  "style": { "accent": "#3D7BFF" }
+}

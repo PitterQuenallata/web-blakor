@@ -1,0 +1,7 @@
+{
+  "title": "Casos",
+  "items": [
+    { "title": "Backoffice a medida", "kpi": "-40% tiempo operativo", "summary": "Automatizamos flujos manuales y reportes." },
+    { "title": "Portal de clientes", "kpi": "+25% retención", "summary": "Accesos seguros, autoservicio y notificaciones." }
+  ]
+}

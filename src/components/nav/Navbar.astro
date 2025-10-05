@@ -1,0 +1,259 @@
+---
+import nav from "../../content/site/navigation.json";
+import { Menu, X } from 'lucide-react';
+---
+<header>
+  <nav class="navbar" data-state="inactive">
+    <div class="nav-container">
+      <div class="nav-content">
+        <div class="nav-header">
+          <a href="/" class="logo">
+            <img src="/logo-syncrotech.webp" alt="SyncroTech" />
+            <span>SyncroTech</span>
+          </a>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <Menu className="menu-icon" />
+            <X className="close-icon" />
+          </button>
+        </div>
+
+        <div class="nav-center">
+          <ul class="nav-links">
+            {nav.global.map((i) => (
+              <li><a href={i.href}>{i.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="nav-actions">
+          <ul class="nav-links-mobile">
+            {nav.global.map((i) => (
+              <li><a href={i.href}>{i.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const navbar = document.querySelector('.navbar');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  });
+
+  menuToggle?.addEventListener('click', () => {
+    const state = navbar?.getAttribute('data-state');
+    navbar?.setAttribute('data-state', state === 'active' ? 'inactive' : 'active');
+  });
+</script>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .nav-container {
+    max-width: 1536px;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .navbar.scrolled .nav-container {
+    max-width: 1024px;
+    background: rgba(11, 11, 15, 0.5);
+    backdrop-filter: blur(16px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 1.25rem;
+  }
+
+  .nav-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+  }
+
+  .navbar.scrolled .nav-content {
+    padding: 1rem 0;
+  }
+
+  .nav-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo span {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #dc2626, #a21caf, #7e22ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 20;
+    display: block;
+    cursor: pointer;
+    padding: 0.625rem;
+    margin: -0.625rem -1rem -0.625rem 0;
+    background: transparent;
+    border: none;
+  }
+
+  .menu-icon,
+  .close-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #ffffff;
+    transition: all 0.2s;
+  }
+
+  .menu-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  .close-icon {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+  }
+
+  .navbar[data-state="active"] .menu-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+  }
+
+  .navbar[data-state="active"] .close-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  .nav-center {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    display: none;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 0.875rem;
+  }
+
+  .nav-links a {
+    color: #a3a3a3;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+  }
+
+  .nav-actions {
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: #0b0b0f;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar[data-state="active"] .nav-actions {
+    display: flex;
+  }
+
+  .nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links-mobile a {
+    color: #a3a3a3;
+    font-size: 1rem;
+  }
+
+
+
+  @media (min-width: 1024px) {
+    .nav-header {
+      width: auto;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-center {
+      display: block;
+    }
+
+    .nav-actions {
+      display: flex;
+      width: fit-content;
+      margin: 0;
+      gap: 0.75rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .nav-links-mobile {
+      display: none;
+    }
+
+
+  }
+</style>

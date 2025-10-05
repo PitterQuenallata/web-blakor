@@ -1,0 +1,20 @@
+---
+import hero from "../../content/custom-dev/hero.json";
+---
+<section id="overview" class="hero-section">
+  <div class="container mx-auto text-center">
+    <h1 class="text-gradient mb-6">{hero.title}</h1>
+    <p class="text-text-secondary text-xl mb-8 max-w-2xl mx-auto">{hero.subtitle}</p>
+    <a href={hero.cta.href} class="btn btn-primary">{hero.cta.label}</a>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+  }
+</style>
