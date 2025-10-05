@@ -1,8 +1,0 @@
-{
-  "id": "cases",
-  "title": "Resultados",
-  "items": [
-    { "title": "E-commerce B2C", "kpi": "+38% conversion", "summary": "Refactor front y optimización de performance.", "href": "#" },
-    { "title": "App logística", "kpi": "-25% tiempos de entrega", "summary": "App con tracking en tiempo real.", "href": "#" }
-  ]
-}

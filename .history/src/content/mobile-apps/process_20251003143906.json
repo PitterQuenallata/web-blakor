@@ -1,9 +1,0 @@
-{
-  "title": "De idea a app",
-  "steps": [
-    { "title": "Descubrimiento", "desc": "Definimos KPIs, pantallas y prioridades." },
-    { "title": "Prototipo", "desc": "Validamos UX/UI y flujo principal." },
-    { "title": "Desarrollo", "desc": "Entregas iterativas y pruebas continuas." },
-    { "title": "Publicación", "desc": "App Store & Play Store, analíticas y soporte." }
-  ]
-}

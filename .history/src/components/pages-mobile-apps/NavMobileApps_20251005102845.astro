@@ -1,9 +1,0 @@
----
-import nav from "../../content/site/navigation.json";
-const items = nav.mobileApps;
----
-<nav aria-label="Mobile Apps">
-  <ul>
-    {items.map((i) => <li><a href={i.href}>{i.label}</a></li>)}
-  </ul>
-</nav>

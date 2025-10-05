@@ -1,7 +1,0 @@
-{
-  "title": "Preguntas frecuentes",
-  "items": [
-    { "q": "¿Pueden migrar mi app actual?", "a": "Sí, evaluamos el estado actual y proponemos un plan de migración por etapas." },
-    { "q": "¿Qué stack recomiendan?", "a": "Depende de objetivos; te asesoramos entre React Native, Flutter u opciones nativas." }
-  ]
-}
