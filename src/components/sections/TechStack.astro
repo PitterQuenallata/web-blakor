@@ -4,17 +4,17 @@ import IconCloud from "../ui/IconCloud";
 
 const slugs = tech.technologies.map(t => t.slug);
 ---
-<section id="tech" class="tech-section">
+<section id="tech" class="tech-section" data-aos="fade-up">
   <div class="tech-glow"></div>
   
   <div class="container mx-auto relative z-10">
-    <div class="text-center mb-20">
+    <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
       <h2 class="tech-title">{tech.title}</h2>
       <p class="tech-subtitle">{tech.subtitle}</p>
     </div>
     
-    <div class="cloud-container">
-      <IconCloud client:load iconSlugs={slugs} />
+    <div class="cloud-container" data-aos="zoom-in" data-aos-delay="200">
+      <IconCloud client:only="react" iconSlugs={slugs} />
     </div>
 
     <div class="ticker-wrapper">

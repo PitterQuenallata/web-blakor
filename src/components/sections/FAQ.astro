@@ -1,14 +1,14 @@
 ---
 import data from "../../content/home/faq.json";
 ---
-<section id="faq" class="faq-section">
+<section id="faq" class="faq-section" data-aos="fade-up">
   <div class="container mx-auto max-w-4xl">
-    <div class="text-center mb-20">
+    <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
       <h2 class="faq-title">{data.title}</h2>
       <p class="text-text-secondary mt-6">Encuentra respuestas rápidas a las preguntas más comunes sobre nuestros servicios.</p>
     </div>
 
-    <div class="faq-accordion">
+    <div class="faq-accordion" data-aos="fade-up" data-aos-delay="200">
       {data.items.map((item) => (
         <details class="faq-item">
           <summary class="faq-question">

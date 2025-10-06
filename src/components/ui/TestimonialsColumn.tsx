@@ -17,17 +17,14 @@ export const TestimonialsColumn = (props: {
   return (
     <div className={props.className}>
       <motion.div
-        initial={{ opacity: 0 }}
         animate={{
           translateY: "-50%",
-          opacity: 1,
         }}
         transition={{
           duration: props.duration || 10,
           repeat: Infinity,
           ease: "linear",
           repeatType: "loop",
-          opacity: { duration: 0.8, ease: "easeOut" },
         }}
         className="flex flex-col gap-6 pb-6"
       >

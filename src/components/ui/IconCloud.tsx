@@ -78,7 +78,7 @@ const IconCloud: FC<IconCloudProps> = ({ iconSlugs }) => {
 
   return (
     // @ts-ignore
-    <Cloud {...cloudProps}>
+    <Cloud {...cloudProps} suppressHydrationWarning>
       <>{renderedIcons}</>
     </Cloud>
   );

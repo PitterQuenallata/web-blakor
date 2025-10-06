@@ -19,7 +19,7 @@
     { "slug": "nextdotjs", "label": "Next.js" },
     { "slug": "react", "label": "React Native" },
     { "slug": "flutter", "label": "Flutter" },
-    { "slug": "flutterflow", "label": "FlutterFlow" },
-    { "slug": "dart", "label": "Dart" }
+    { "slug": "dart", "label": "Dart" },
+    { "slug": "docker", "label": "Docker" }
   ]
 }
