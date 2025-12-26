@@ -6,17 +6,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rm -rf node_modules/.vite dist .astro",
+    "check": "astro check",
+    "build:analyze": "ANALYZE=true astro build"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.0",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "aos": "^2.3.4",
-    "astro": "^5.14.1",
+    "astro": "^5.16.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.22",
@@ -24,9 +26,14 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icon-cloud": "^4.1.7",
+    "sharp": "^0.34.5",
     "simple-icons": "^15.16.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.14",
     "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/outfit": "^5.2.8"
   }
 }

@@ -3,22 +3,55 @@
   "title": "Contacto",
   "subtitle": "Te respondemos a la brevedad.",
   "channels": [
-    { "type": "email", "label": "soporte@syncrotech.com.bo", "href": "Mallku:soporte@syncrotech.com.bo" },
-    { "type": "whatsapp", "label": "+591 67033711", "href": "https://wa.me/59167033711" }
+    {
+      "type": "email",
+      "label": "contacto@blakor.com",
+      "href": "mailto:contacto@blakor.com"
+    },
+    {
+      "type": "email",
+      "label": "soporte@blakor.com",
+      "href": "mailto:soporte@blakor.com"
+    },
+    {
+      "type": "whatsapp",
+      "label": "+591 67033711",
+      "href": "https://wa.me/59167033711"
+    }
   ],
   "socialMedia": [
-    { "name": "WhatsApp", "href": "https://wa.me/59167033711", "color": "#25D366" },
-    { "name": "Facebook", "href": "https://facebook.com/syncrotech", "color": "#1877F2" },
-    { "name": "Instagram", "href": "https://instagram.com/syncrotech", "color": "#E4405F" },
-    { "name": "Twitter", "href": "https://twitter.com/syncrotech", "color": "#1DA1F2" },
-    { "name": "TikTok", "href": "https://tiktok.com/@syncrotech", "color": "#FE2C55" },
-    { "name": "YouTube", "href": "https://youtube.com/@syncrotech", "color": "#FF0000" },
-    { "name": "LinkedIn", "href": "https://linkedin.com/company/syncrotech", "color": "#0A66C2" },
-    { "name": "GitHub", "href": "https://github.com/syncrotech", "color": "#333333" }
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/59167033711",
+      "color": "#25D366"
+    },
+    {
+      "name": "Facebook",
+      "href": "#",
+      "color": "#1877F2"
+    },
+    {
+      "name": "Instagram",
+      "href": "#",
+      "color": "#E4405F"
+    },
+    {
+      "name": "TikTok",
+      "href": "#",
+      "color": "#FE2C55"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "#",
+      "color": "#0A66C2"
+    }
   ],
   "finalCTA": {
     "title": "¿Listo para empezar?",
     "subtitle": "Cuéntanos tus objetivos y armamos un plan juntos.",
-    "primary": { "label": "Solicitar cotización", "href": "/#contact" }
+    "primary": {
+      "label": "Solicitar cotización",
+      "href": "/#contact"
+    }
   }
 }

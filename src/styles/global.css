@@ -1,5 +1,12 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Local fonts - optimized for performance */
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
 
 :root {
   --color-bg: #0B0C10;
@@ -34,7 +41,7 @@ body {
   position: relative;
 }
 
-/* Fondo con spotlight superior intenso */
+/* Fondo con spotlight - SIMPLIFIED for performance */
 body::before {
   content: '';
   position: fixed;
@@ -42,14 +49,13 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(ellipse 40% 50% at 50% 0%, rgba(220, 38, 38, 0.25) 0%, rgba(162, 28, 175, 0.15) 30%, transparent 70%),
-    radial-gradient(ellipse 30% 50% at 0% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 30% 50% at 100% 50%, rgba(126, 34, 206, 0.08) 0%, transparent 50%);
+  background: radial-gradient(ellipse 50% 40% at 50% 0%, rgba(220, 38, 38, 0.15) 0%, transparent 60%);
   z-index: -2;
+  pointer-events: none;
 }
 
-/* Grain sutil */
+/* Grain disabled for performance */
+/*
 body::after {
   content: '';
   position: fixed;
@@ -57,22 +63,36 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,...");
   pointer-events: none;
   z-index: -1;
 }
+*/
 
 /* Tipografía */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Outfit', system-ui, sans-serif;
   font-weight: 700;
   color: var(--color-text-primary);
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
 
 /* Links */
 a {
@@ -198,26 +218,129 @@ main {
   padding: 0 1rem;
 }
 
-/* Animaciones */
+/* ============================================
+   OPTIMIZED ANIMATION SYSTEM
+   - GPU accelerated (transform + opacity)
+   - Intersection Observer driven
+   - Replaces AOS library
+   ============================================ */
+
+/* Base state for animated elements - SIMPLIFIED */
+[data-animate] {
+  opacity: 0;
+  /* Removed will-change to reduce layer creation */
+}
+
+/* Animated state */
+[data-animate].animate-in {
+  opacity: 1;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+
+/* Animation variants */
+[data-animate="fade-up"].animate-in {
+  animation-name: fadeUp;
+}
+
+[data-animate="fade-down"].animate-in {
+  animation-name: fadeDown;
+}
+
+[data-animate="fade-left"].animate-in {
+  animation-name: fadeLeft;
+}
+
+[data-animate="fade-right"].animate-in {
+  animation-name: fadeRight;
+}
+
+[data-animate="zoom-in"].animate-in {
+  animation-name: zoomIn;
+}
+
+[data-animate="fade"].animate-in {
+  animation-name: fadeIn;
+}
+
+/* Keyframes - GPU accelerated with transform3d */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale3d(0.95, 0.95, 1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
+/* Accordion animations (keep existing) */
 @keyframes accordion-down {
   from {
     height: 0;
   }
+
   to {
     height: var(--radix-accordion-content-height);
   }
@@ -227,6 +350,7 @@ main {
   from {
     height: var(--radix-accordion-content-height);
   }
+
   to {
     height: 0;
   }
@@ -238,4 +362,19 @@ main {
 
 .animate-accordion-up {
   animation: accordion-up 0.2s ease-out;
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Content visibility for off-screen optimization */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }

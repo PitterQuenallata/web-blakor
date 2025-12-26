@@ -1,52 +1,18 @@
-# SyncroTech - Sitio Web Corporativo
+# Blakor - Sitio Web Corporativo
 
-Sitio web moderno desarrollado con Astro, React y Tailwind CSS. Incluye animaciones con Three.js, componentes interactivos y optimizaciones SEO.
+Sitio web moderno desarrollado con Astro, React y Tailwind CSS. Incluye animaciones con Three.js, componentes interactivos y optimizaciones de rendimiento.
 
 ## 🚀 Stack Tecnológico
 
-- **Framework**: Astro 5.14.1
-- **UI Library**: React 19.2.0
-- **Styling**: Tailwind CSS 4.1.14
-- **Animations**: Framer Motion 12.23.22
-- **3D Graphics**: Three.js 0.180.0
-- **Icons**: Lucide React 0.544.0
+- **Framework**: Astro 5.x
+- **UI Library**: React 19.x
+- **Styling**: Tailwind CSS 4.x
+- **Animations**: Framer Motion
+- **3D Graphics**: Three.js
+- **Icons**: Lucide React
 - **Package Manager**: pnpm
 
-## 📦 Dependencias
-
-### Core
-```json
-"astro": "^5.14.1"
-"@astrojs/react": "^4.4.0"
-"@astrojs/sitemap": "^3.6.0"
-"react": "^19.2.0"
-"react-dom": "^19.2.0"
-```
-
-### Styling
-```json
-"tailwindcss": "^4.1.14"
-"@tailwindcss/vite": "^4.1.14"
-"clsx": "^2.1.1"
-"tailwind-merge": "^3.3.1"
-"class-variance-authority": "^0.7.1"
-```
-
-### UI Components
-```json
-"lucide-react": "^0.544.0"
-"@radix-ui/react-slot": "^1.2.3"
-"framer-motion": "^12.23.22"
-"react-icon-cloud": "^4.1.7"
-"simple-icons": "^15.16.1"
-```
-
-### 3D & Graphics
-```json
-"three": "^0.180.0"
-```
-
-## 🛠️ Instalación Local
+## 📦 Instalación
 
 ### Requisitos Previos
 - Node.js 18+ o 20+
@@ -56,8 +22,8 @@ Sitio web moderno desarrollado con Astro, React y Tailwind CSS. Incluye animacio
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/web-syncrotech.git
-cd web-syncrotech
+git clone https://github.com/tu-usuario/web-blakor.git
+cd web-blakor
 ```
 
 2. **Instalar dependencias**
@@ -80,7 +46,6 @@ El sitio estará disponible en `http://localhost:4321`
 | `pnpm dev` | Inicia servidor de desarrollo en `localhost:4321` |
 | `pnpm build` | Construye el sitio para producción en `./dist/` |
 | `pnpm preview` | Previsualiza el build de producción localmente |
-| `pnpm astro ...` | Ejecuta comandos CLI de Astro |
 
 ## 🚀 Despliegue en VPS
 
@@ -89,7 +54,6 @@ El sitio estará disponible en `http://localhost:4321`
 - Node.js 18+ o 20+
 - pnpm 8+
 - Nginx (recomendado)
-- PM2 (para proceso persistente)
 
 ### Instalación en VPS
 
@@ -107,8 +71,8 @@ source ~/.bashrc
 2. **Clonar y configurar proyecto**
 ```bash
 cd /var/www
-sudo git clone https://github.com/tu-usuario/web-syncrotech.git
-cd web-syncrotech
+sudo git clone https://github.com/tu-usuario/web-blakor.git
+cd web-blakor
 sudo chown -R $USER:$USER .
 pnpm install
 ```
@@ -120,16 +84,16 @@ pnpm build
 
 4. **Configurar Nginx**
 ```bash
-sudo nano /etc/nginx/sites-available/syncrotech
+sudo nano /etc/nginx/sites-available/blakor
 ```
 
 Agregar:
 ```nginx
 server {
     listen 80;
-    server_name syncrotech.com www.syncrotech.com;
+    server_name blakor.com www.blakor.com;
     
-    root /var/www/web-syncrotech/dist;
+    root /var/www/web-blakor/dist;
     index index.html;
     
     location / {
@@ -150,21 +114,21 @@ server {
 
 5. **Activar sitio**
 ```bash
-sudo ln -s /etc/nginx/sites-available/syncrotech /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/blakor /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-6. **SSL con Certbot (opcional pero recomendado)**
+6. **SSL con Certbot**
 ```bash
 sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d syncrotech.com -d www.syncrotech.com
+sudo certbot --nginx -d blakor.com -d www.blakor.com
 ```
 
 ### Actualizaciones
 
 ```bash
-cd /var/www/web-syncrotech
+cd /var/www/web-blakor
 git pull origin main
 pnpm install
 pnpm build
@@ -177,8 +141,11 @@ sudo systemctl reload nginx
 /
 ├── public/              # Archivos estáticos
 │   ├── home/           # Imágenes del home
+│   ├── logo-color-web.webp   # Logo tema oscuro
+│   ├── logo-negro-web.webp   # Logo tema claro
 │   └── robots.txt      # SEO
 ├── src/
+│   ├── assets/         # Assets procesados por Astro
 │   ├── components/     # Componentes reutilizables
 │   │   ├── sections/   # Secciones de página
 │   │   ├── ui/         # Componentes UI
@@ -189,23 +156,53 @@ sudo systemctl reload nginx
 │   │   └── site/       # Configuración global
 │   ├── layouts/        # Layouts de página
 │   ├── pages/          # Páginas del sitio
+│   │   ├── legal/      # Páginas legales
+│   │   ├── custom-dev.astro
+│   │   ├── mobile-apps.astro
+│   │   └── index.astro
+│   ├── scripts/        # Scripts de animación
 │   └── styles/         # Estilos globales
-├── astro.config.mjs   # Configuración Astro
-├── tailwind.config.js # Configuración Tailwind
-└── package.json       # Dependencias
+├── astro.config.mjs    # Configuración Astro
+└── package.json        # Dependencias
 ```
+
+## 📄 Páginas
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Página principal |
+| `/custom-dev` | Desarrollo Web Personalizado |
+| `/mobile-apps` | Aplicaciones Móviles |
+| `/legal/privacidad` | Política de Privacidad |
+| `/legal/terminos` | Términos de Servicio |
 
 ## ✨ Características
 
 - ✅ Diseño responsive
-- ✅ Animaciones de scroll reveal
-- ✅ Shader animado con Three.js
+- ✅ Animaciones de scroll optimizadas (sin AOS)
+- ✅ Shader animado con Three.js (lazy loaded)
 - ✅ Componentes interactivos con React
 - ✅ SEO optimizado (meta tags, sitemap, robots.txt)
 - ✅ Performance optimizado (lazy loading, code splitting)
-- ✅ Tema oscuro Darkrise
+- ✅ Tema oscuro premium
 - ✅ Glassmorphism UI
+- ✅ Testimonios con Framer Motion
+- ✅ Imágenes optimizadas con Astro Image
+
+## 🔧 Configuración
+
+### Cambiar información de contacto
+Editar `src/content/home/contact.json`
+
+### Cambiar información de marca
+Editar `src/content/site/brand.json`
+
+### Cambiar navegación
+Editar `src/content/site/navigation.json`
+
+### Cambiar footer
+Editar `src/content/home/footer.json`
 
 ## 📝 Licencia
 
-Propietario - SyncroTech © 2025
+Propietario - Blakor © 2025

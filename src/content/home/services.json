@@ -6,19 +6,29 @@
     {
       "title": "Desarrollo Personalizado",
       "description": "Software a la medida de tus objetivos, integraciones y flujos de negocio.",
-      "cta": { "label": "Ver más", "href": "/custom-dev" },
+      "cta": {
+        "label": "Ver más",
+        "href": "/custom-dev"
+      },
       "icon": "/public/media/icons/custom-dev.svg"
     },
     {
       "title": "Aplicaciones Móviles",
       "description": "Apps intuitivas y potentes para iOS y Android, listas para escalar.",
-      "cta": { "label": "Ver más", "href": "/mobile-apps" },
+      "cta": {
+        "label": "Ver más",
+        "href": "/mobile-apps"
+      },
       "icon": "/public/media/icons/mobile-apps.svg"
     },
     {
       "title": "SaaS para Eventos",
       "description": "Plataforma para bodas y eventos: organiza, comparte y mide.",
-      "cta": { "label": "Conocer", "href": "https://bodas.syncrotech.com.bo", "external": true },
+      "cta": {
+        "label": "Conocer",
+        "href": "#",
+        "external": false
+      },
       "icon": "/public/media/icons/wedding-saas.svg"
     }
   ]

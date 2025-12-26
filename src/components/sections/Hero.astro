@@ -1,10 +1,13 @@
 ---
 import hero from "../../content/home/hero.json";
+import { Image } from 'astro:assets';
+import bannerImg from '../../assets/bannerDashboard.webp';
 import { ArrowRight } from 'lucide-react';
 import AnimatedShaderBackground from '../ui/AnimatedShaderBackground.tsx';
 ---
 <section id="home" class="hero-section">
-  <AnimatedShaderBackground client:load />
+  <!-- PERFORMANCE: Lazy load background después de contenido crítico -->
+  <AnimatedShaderBackground client:idle />
   <div class="hero-glow" aria-hidden="true"></div>
   
   <div class="container mx-auto">
@@ -25,12 +28,14 @@ import AnimatedShaderBackground from '../ui/AnimatedShaderBackground.tsx';
     <div class="hero-image-wrapper">
       <div class="hero-image-gradient" aria-hidden="true"></div>
       <div class="hero-image-container">
-        <img
-          src="/bannerDashboard.webp"
-          alt="SyncroTech Dashboard"
+        <Image
+          src={bannerImg}
+          alt="Blakor Dashboard"
           class="hero-image"
-          width="2700"
-          height="1440"
+          widths={[640, 1024, 1536, 1920]}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1200px"
+          loading="eager"
+          quality={85}
         />
       </div>
     </div>
@@ -41,6 +46,8 @@ import AnimatedShaderBackground from '../ui/AnimatedShaderBackground.tsx';
   .hero-section {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh; /* Modern mobile browsers */
+    min-height: 100dvh; /* Dynamic viewport */
     display: flex;
     align-items: center;
     padding: 8rem 2rem 8rem;
@@ -129,6 +136,7 @@ import AnimatedShaderBackground from '../ui/AnimatedShaderBackground.tsx';
   .hero-image {
     width: 100%;
     height: auto;
+    object-fit: cover;
     border-radius: calc(var(--radius-card) - 4px);
     display: block;
   }

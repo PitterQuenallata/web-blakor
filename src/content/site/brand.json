@@ -1,9 +1,9 @@
 {
-  "name": "SyncroTech",
+  "name": "Blakor",
   "tagline": "Soluciones a la medida de tu empresa. Donde otros ven un reto, nosotros creamos la solución perfecta.",
   "logo": {
-    "light": "/public/logos/syncrotech-light.svg",
-    "dark": "/public/logos/syncrotech-dark.svg"
+    "dark": "/logo-color-web.webp",
+    "light": "/logo-negro-web.webp"
   },
   "palette": {
     "background": "#0D0D12",

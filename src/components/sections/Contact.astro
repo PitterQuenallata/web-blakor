@@ -2,15 +2,15 @@
 import contact from "../../content/home/contact.json";
 import { Mail, MessageCircle, Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
 ---
-<section id="contact" class="contact-section" data-aos="fade-up">
+<section id="contact" class="contact-section" data-animate="fade-up">
   <div class="container mx-auto max-w-4xl">
     <div class="contact-card">
-      <div class="text-center mb-8" data-aos="fade-up" data-aos-delay="100">
+      <div class="text-center mb-8" data-animate="fade-up" data-delay="100">
         <h2 class="contact-title">{contact.title}</h2>
         <p class="contact-subtitle">{contact.subtitle}</p>
       </div>
       
-      <div class="contact-grid" data-aos="fade-up" data-aos-delay="200">
+      <div class="contact-grid" data-animate="fade-up" data-delay="200">
         <div class="contact-info">
           <h3 class="info-title">Canales de contacto</h3>
           <div class="contact-channels">
@@ -28,7 +28,7 @@ import { Mail, MessageCircle, Facebook, Instagram, Linkedin, Twitter, Youtube } 
             <h4 class="social-title">Síguenos</h4>
             <div class="social-icons">
               {contact.socialMedia.map((social) => (
-                <a href={social.href} target="_blank" class={`social-icon social-${social.name.toLowerCase()}`} style={`--icon-color: ${social.color}`}>
+                <a href={social.href} target="_blank" class="social-icon" aria-label={social.name} style={`--icon-color: ${social.color}`}>
                   {social.name === 'WhatsApp' && <MessageCircle size={20} />}
                   {social.name === 'Facebook' && <Facebook size={20} />}
                   {social.name === 'Instagram' && <Instagram size={20} />}
@@ -151,78 +151,19 @@ import { Mail, MessageCircle, Facebook, Instagram, Linkedin, Twitter, Youtube } 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(59, 130, 246, 0.05);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    /* Usa la variable --icon-color definida en el HTML o un fallback */
+    color: var(--icon-color, #3B82F6);
+    background: color-mix(in srgb, var(--icon-color, #3B82F6) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--icon-color, #3B82F6) 20%, transparent);
     border-radius: 50%;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .social-icon:hover {
-    transform: scale(1.1);
-  }
-
-  .social-whatsapp {
-    color: #25D366;
-    border-color: rgba(37, 211, 102, 0.3);
-  }
-  .social-whatsapp:hover {
-    background: rgba(37, 211, 102, 0.15);
-    border-color: rgba(37, 211, 102, 0.5);
-  }
-
-  .social-facebook {
-    color: #1877F2;
-    border-color: rgba(24, 119, 242, 0.3);
-  }
-  .social-facebook:hover {
-    background: rgba(24, 119, 242, 0.15);
-    border-color: rgba(24, 119, 242, 0.5);
-  }
-
-  .social-instagram {
-    color: #E4405F;
-    border-color: rgba(228, 64, 95, 0.3);
-  }
-  .social-instagram:hover {
-    background: rgba(228, 64, 95, 0.15);
-    border-color: rgba(228, 64, 95, 0.5);
-  }
-
-  .social-twitter {
-    color: #1DA1F2;
-    border-color: rgba(29, 161, 242, 0.3);
-  }
-  .social-twitter:hover {
-    background: rgba(29, 161, 242, 0.15);
-    border-color: rgba(29, 161, 242, 0.5);
-  }
-
-  .social-tiktok {
-    color: #000000;
-    border-color: rgba(0, 0, 0, 0.3);
-  }
-  .social-tiktok:hover {
-    background: rgba(0, 0, 0, 0.15);
-    border-color: rgba(0, 0, 0, 0.5);
-    color: #FE2C55;
-  }
-
-  .social-youtube {
-    color: #FF0000;
-    border-color: rgba(255, 0, 0, 0.3);
-  }
-  .social-youtube:hover {
-    background: rgba(255, 0, 0, 0.15);
-    border-color: rgba(255, 0, 0, 0.5);
-  }
-
-  .social-linkedin {
-    color: #0A66C2;
-    border-color: rgba(10, 102, 194, 0.3);
-  }
-  .social-linkedin:hover {
-    background: rgba(10, 102, 194, 0.15);
-    border-color: rgba(10, 102, 194, 0.5);
+    transform: translateY(-4px) scale(1.1);
+    background: color-mix(in srgb, var(--icon-color, #3B82F6) 15%, transparent);
+    border-color: color-mix(in srgb, var(--icon-color, #3B82F6) 50%, transparent);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--icon-color, #3B82F6) 20%, transparent);
   }
 
   .contact-cta {

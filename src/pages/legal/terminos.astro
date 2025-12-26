@@ -1,0 +1,207 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Términos de Servicio | Blakor"
+  description="Términos y condiciones de uso de los servicios de Blakor."
+>
+  <section class="legal-section">
+    <div class="container mx-auto max-w-4xl">
+      <div class="legal-header">
+        <h1 class="legal-title">Términos de Servicio</h1>
+        <p class="legal-date">Última actualización: Diciembre 2024</p>
+      </div>
+
+      <div class="legal-content">
+        <article class="legal-article">
+          <h2>1. Aceptación de los Términos</h2>
+          <p>
+            Al acceder y utilizar los servicios de Blakor, aceptas estar sujeto a estos 
+            términos de servicio. Si no estás de acuerdo con alguna parte de estos términos, 
+            no debes utilizar nuestros servicios.
+          </p>
+
+          <h2>2. Descripción de Servicios</h2>
+          <p>Blakor ofrece servicios de:</p>
+          <ul>
+            <li>Desarrollo de software personalizado</li>
+            <li>Desarrollo de aplicaciones móviles</li>
+            <li>Soluciones SaaS</li>
+            <li>Consultoría tecnológica</li>
+          </ul>
+          <p>
+            Los detalles específicos de cada servicio se acuerdan por escrito antes del inicio 
+            de cualquier proyecto.
+          </p>
+
+          <h2>3. Obligaciones del Cliente</h2>
+          <p>El cliente se compromete a:</p>
+          <ul>
+            <li>Proporcionar información veraz y completa para el desarrollo del proyecto</li>
+            <li>Realizar los pagos según el cronograma acordado</li>
+            <li>Revisar y aprobar entregables en los plazos establecidos</li>
+            <li>No utilizar nuestros servicios para fines ilegales</li>
+          </ul>
+
+          <h2>4. Propiedad Intelectual</h2>
+          <p>
+            <strong>Código desarrollado:</strong> Una vez completado el pago total, el código 
+            fuente desarrollado específicamente para el cliente será de su propiedad.
+          </p>
+          <p>
+            <strong>Herramientas propias:</strong> Las herramientas, frameworks y bibliotecas 
+            propias de Blakor permanecen siendo propiedad de Blakor.
+          </p>
+
+          <h2>5. Pagos y Facturación</h2>
+          <ul>
+            <li>Los proyectos requieren un anticipo del 50% para iniciar</li>
+            <li>El 50% restante se paga al completar el proyecto</li>
+            <li>Proyectos grandes pueden tener cronogramas de pago personalizados</li>
+            <li>Los pagos atrasados pueden resultar en suspensión del trabajo</li>
+          </ul>
+
+          <h2>6. Garantía y Soporte</h2>
+          <p>
+            Ofrecemos 30 días de garantía después de la entrega para corrección de errores 
+            relacionados con los requisitos acordados. Modificaciones adicionales se cotizan 
+            por separado.
+          </p>
+
+          <h2>7. Limitación de Responsabilidad</h2>
+          <p>
+            Blakor no será responsable por daños indirectos, incidentales o consecuentes 
+            derivados del uso de nuestros servicios. Nuestra responsabilidad máxima se limita 
+            al monto pagado por el servicio en cuestión.
+          </p>
+
+          <h2>8. Confidencialidad</h2>
+          <p>
+            Nos comprometemos a mantener la confidencialidad de toda la información del cliente. 
+            No divulgaremos información del proyecto sin consentimiento previo.
+          </p>
+
+          <h2>9. Cancelación</h2>
+          <p>
+            En caso de cancelación por parte del cliente, los pagos realizados no son 
+            reembolsables. El trabajo completado hasta la fecha de cancelación será 
+            entregado al cliente.
+          </p>
+
+          <h2>10. Modificaciones</h2>
+          <p>
+            Nos reservamos el derecho de modificar estos términos. Los cambios entrarán 
+            en vigor al ser publicados en este sitio. Es tu responsabilidad revisar 
+            periódicamente estos términos.
+          </p>
+
+          <h2>11. Ley Aplicable</h2>
+          <p>
+            Estos términos se rigen por las leyes del Estado Plurinacional de Bolivia. 
+            Cualquier disputa se resolverá en los tribunales competentes de Bolivia.
+          </p>
+
+          <h2>12. Contacto</h2>
+          <p>
+            Para consultas sobre estos términos, contáctanos:
+          </p>
+          <ul>
+            <li><strong>Email:</strong> legal@blakor.com</li>
+            <li><strong>WhatsApp:</strong> +591 70000000</li>
+          </ul>
+        </article>
+
+        <div class="legal-footer">
+          <a href="/" class="btn btn-secondary">← Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-section {
+    padding: 8rem 2rem 4rem;
+    min-height: 100vh;
+  }
+
+  .legal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .legal-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(59, 130, 246, 0.8) 50%, rgba(6, 182, 212, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .legal-date {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .legal-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    padding: 3rem;
+  }
+
+  .legal-article h2 {
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin: 2rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .legal-article h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .legal-article p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .legal-article ul {
+    color: var(--color-text-secondary);
+    margin: 1rem 0 1.5rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .legal-article li {
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-article strong {
+    color: var(--color-text-primary);
+  }
+
+  .legal-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .legal-content {
+      padding: 1.5rem;
+    }
+
+    .legal-section {
+      padding: 6rem 1rem 2rem;
+    }
+  }
+</style>

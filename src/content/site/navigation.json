@@ -1,31 +1,91 @@
 {
   "global": [
-    { "label": "Inicio", "href": "/#home" },
-    { "label": "Servicios", "href": "/#services" },
-    { "label": "Tecnologías", "href": "/#tech" },
-    { "label": "Testimonios", "href": "/#testimonials" },
-    { "label": "FAQ", "href": "/#faq" },
-    { "label": "Contacto", "href": "/#contact" }
+    {
+      "label": "Inicio",
+      "href": "/#home"
+    },
+    {
+      "label": "Servicios",
+      "href": "/#services"
+    },
+    {
+      "label": "Tecnologías",
+      "href": "/#tech"
+    },
+    {
+      "label": "Testimonios",
+      "href": "/#testimonials"
+    },
+    {
+      "label": "FAQ",
+      "href": "/#faq"
+    },
+    {
+      "label": "Contacto",
+      "href": "/#contact"
+    }
   ],
   "customDev": [
-    { "label": "← Home", "href": "/" },
-    { "label": "Resumen", "href": "/custom-dev#overview" },
-    { "label": "Proceso", "href": "/custom-dev#process" },
-    { "label": "Tecnologías", "href": "/custom-dev#tech" },
-    { "label": "Casos", "href": "/custom-dev#cases" },
-    { "label": "FAQ", "href": "/custom-dev#faq" },
-    { "label": "Contacto", "href": "/custom-dev#contact" }
+    {
+      "label": "← Home",
+      "href": "/"
+    },
+    {
+      "label": "Resumen",
+      "href": "/custom-dev#overview"
+    },
+    {
+      "label": "Proceso",
+      "href": "/custom-dev#process"
+    },
+    {
+      "label": "Tecnologías",
+      "href": "/custom-dev#tech"
+    },
+    {
+      "label": "Casos",
+      "href": "/custom-dev#cases"
+    },
+    {
+      "label": "FAQ",
+      "href": "/custom-dev#faq"
+    },
+    {
+      "label": "Contacto",
+      "href": "/custom-dev#contact"
+    }
   ],
   "mobileApps": [
-    { "label": "← Home", "href": "/" },
-    { "label": "Resumen", "href": "/mobile-apps#overview" },
-    { "label": "Capacidades", "href": "/mobile-apps#capabilities" },
-    { "label": "Stacks", "href": "/mobile-apps#stacks" },
-    { "label": "Proceso", "href": "/mobile-apps#process" },
-    { "label": "FAQ", "href": "/mobile-apps#faq" },
-    { "label": "Contacto", "href": "/mobile-apps#contact" }
+    {
+      "label": "← Home",
+      "href": "/"
+    },
+    {
+      "label": "Resumen",
+      "href": "/mobile-apps#overview"
+    },
+    {
+      "label": "Capacidades",
+      "href": "/mobile-apps#capabilities"
+    },
+    {
+      "label": "Stacks",
+      "href": "/mobile-apps#stacks"
+    },
+    {
+      "label": "Proceso",
+      "href": "/mobile-apps#process"
+    },
+    {
+      "label": "FAQ",
+      "href": "/mobile-apps#faq"
+    },
+    {
+      "label": "Contacto",
+      "href": "/mobile-apps#contact"
+    }
   ],
   "external": {
-    "weddingSaaS": "https://bodas.syncrotech.com.bo"
+    "weddingSaaS": "#"
   }
 }

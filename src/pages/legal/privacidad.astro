@@ -1,0 +1,191 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Política de Privacidad | Blakor"
+  description="Política de privacidad y protección de datos de Blakor. Conoce cómo manejamos tu información."
+>
+  <section class="legal-section">
+    <div class="container mx-auto max-w-4xl">
+      <div class="legal-header">
+        <h1 class="legal-title">Política de Privacidad</h1>
+        <p class="legal-date">Última actualización: Diciembre 2024</p>
+      </div>
+
+      <div class="legal-content">
+        <article class="legal-article">
+          <h2>1. Información que Recopilamos</h2>
+          <p>
+            En Blakor, valoramos tu privacidad. Recopilamos información únicamente cuando es necesaria 
+            para proporcionar nuestros servicios. Esta información puede incluir:
+          </p>
+          <ul>
+            <li><strong>Datos de contacto:</strong> Nombre, correo electrónico, teléfono cuando nos contactas.</li>
+            <li><strong>Información técnica:</strong> Tipo de navegador, sistema operativo y dirección IP para mejorar la experiencia.</li>
+            <li><strong>Datos de uso:</strong> Páginas visitadas y tiempo de navegación para optimizar nuestro sitio.</li>
+          </ul>
+
+          <h2>2. Cómo Usamos tu Información</h2>
+          <p>Utilizamos la información recopilada para:</p>
+          <ul>
+            <li>Responder a tus consultas y solicitudes de servicio</li>
+            <li>Mejorar nuestro sitio web y servicios</li>
+            <li>Enviarte información relevante sobre nuestros servicios (con tu consentimiento)</li>
+            <li>Cumplir con obligaciones legales</li>
+          </ul>
+
+          <h2>3. Protección de Datos</h2>
+          <p>
+            Implementamos medidas de seguridad técnicas y organizativas para proteger tu información 
+            contra acceso no autorizado, pérdida o alteración. Esto incluye:
+          </p>
+          <ul>
+            <li>Cifrado SSL/TLS en todas las comunicaciones</li>
+            <li>Acceso restringido a datos personales</li>
+            <li>Monitoreo regular de seguridad</li>
+          </ul>
+
+          <h2>4. Compartir Información</h2>
+          <p>
+            <strong>No vendemos ni compartimos</strong> tu información personal con terceros, excepto:
+          </p>
+          <ul>
+            <li>Cuando sea requerido por ley</li>
+            <li>Con proveedores de servicios esenciales bajo acuerdos de confidencialidad</li>
+            <li>Con tu consentimiento explícito</li>
+          </ul>
+
+          <h2>5. Cookies</h2>
+          <p>
+            Utilizamos cookies esenciales para el funcionamiento del sitio y cookies analíticas 
+            para entender cómo interactúas con nuestra página. Puedes configurar tu navegador 
+            para rechazar cookies, aunque esto puede afectar algunas funcionalidades.
+          </p>
+
+          <h2>6. Tus Derechos</h2>
+          <p>Tienes derecho a:</p>
+          <ul>
+            <li><strong>Acceder</strong> a los datos que tenemos sobre ti</li>
+            <li><strong>Rectificar</strong> información incorrecta</li>
+            <li><strong>Eliminar</strong> tus datos personales</li>
+            <li><strong>Oponerte</strong> al procesamiento de tus datos</li>
+            <li><strong>Portabilidad</strong> de tus datos a otro servicio</li>
+          </ul>
+
+          <h2>7. Retención de Datos</h2>
+          <p>
+            Conservamos tu información solo durante el tiempo necesario para cumplir con los 
+            propósitos descritos en esta política o según lo requiera la ley.
+          </p>
+
+          <h2>8. Cambios a esta Política</h2>
+          <p>
+            Podemos actualizar esta política periódicamente. Te notificaremos de cambios 
+            significativos a través de nuestro sitio web o por correo electrónico.
+          </p>
+
+          <h2>9. Contacto</h2>
+          <p>
+            Si tienes preguntas sobre esta política de privacidad o deseas ejercer tus derechos, 
+            contáctanos en:
+          </p>
+          <ul>
+            <li><strong>Email:</strong> privacidad@blakor.com</li>
+            <li><strong>WhatsApp:</strong> +591 70000000</li>
+          </ul>
+        </article>
+
+        <div class="legal-footer">
+          <a href="/" class="btn btn-secondary">← Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-section {
+    padding: 8rem 2rem 4rem;
+    min-height: 100vh;
+  }
+
+  .legal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .legal-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(59, 130, 246, 0.8) 50%, rgba(6, 182, 212, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .legal-date {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .legal-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    padding: 3rem;
+  }
+
+  .legal-article h2 {
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    margin: 2rem 0 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .legal-article h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .legal-article p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .legal-article ul {
+    color: var(--color-text-secondary);
+    margin: 1rem 0 1.5rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .legal-article li {
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-article strong {
+    color: var(--color-text-primary);
+  }
+
+  .legal-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .legal-content {
+      padding: 1.5rem;
+    }
+
+    .legal-section {
+      padding: 6rem 1rem 2rem;
+    }
+  }
+</style>

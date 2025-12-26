@@ -4,11 +4,11 @@ import { Code2, Smartphone, Calendar } from 'lucide-react';
 
 const icons = [Code2, Smartphone, Calendar];
 ---
-<section id="services" class="services-section" data-aos="fade-up">
+<section id="services" class="services-section" data-animate="fade-up">
   <div class="services-glow"></div>
   
   <div class="container mx-auto relative z-10">
-    <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
+    <div class="text-center mb-16" data-animate="fade-up" data-delay="100">
       <h2 class="services-title">{data.title}</h2>
       <p class="services-subtitle">{data.subtitle}</p>
     </div>
@@ -24,6 +24,9 @@ const icons = [Code2, Smartphone, Calendar];
                 alt={c.title}
                 class="service-image-img"
                 loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
               />
             </div>
             <div class="service-content">

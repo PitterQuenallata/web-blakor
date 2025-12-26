@@ -11,13 +11,13 @@ interface Props {
 }
 
 const {
-  title = "SyncroTech - Soluciones Tecnológicas Innovadoras",
+  title = "Blakor - Soluciones Tecnológicas Innovadoras",
   description = "Desarrollo de software personalizado, aplicaciones móviles y soluciones SaaS. Transformamos ideas en realidad digital con tecnología de vanguardia.",
   image = "/og-image.jpg",
   canonical = Astro.url.pathname
 } = Astro.props;
 
-const siteUrl = Astro.site || "https://syncrotech.com";
+const siteUrl = Astro.site || "https://blakor.com";
 const canonicalURL = new URL(canonical, siteUrl);
 const ogImage = new URL(image, siteUrl);
 ---
@@ -40,7 +40,7 @@ const ogImage = new URL(image, siteUrl);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="SyncroTech" />
+    <meta property="og:site_name" content="Blakor" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -50,12 +50,9 @@ const ogImage = new URL(image, siteUrl);
     <meta name="twitter:image" content={ogImage} />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    
-    <!-- Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/webp" href="/logo-color-web.webp" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo-color-web.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-color-web.webp" />
     
     <slot name="head" />
   </head>
@@ -65,16 +62,8 @@ const ogImage = new URL(image, siteUrl);
     <footer><Footer /></footer>
     
     <script>
-      import AOS from 'aos';
-      import 'aos/dist/aos.css';
-      
-      AOS.init({
-        duration: 800,
-        easing: 'ease-out',
-        once: true,
-        offset: 100,
-        delay: 0,
-      });
+      // Lightweight animation system (replaces AOS)
+      import '../scripts/animations.ts';
     </script>
   </body>
 </html>

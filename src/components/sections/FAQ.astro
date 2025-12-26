@@ -1,14 +1,14 @@
 ---
 import data from "../../content/home/faq.json";
 ---
-<section id="faq" class="faq-section" data-aos="fade-up">
+<section id="faq" class="faq-section" data-animate="fade-up">
   <div class="container mx-auto max-w-4xl">
-    <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
+    <div class="text-center mb-20" data-animate="fade-up" data-delay="100">
       <h2 class="faq-title">{data.title}</h2>
       <p class="text-text-secondary mt-6">Encuentra respuestas rápidas a las preguntas más comunes sobre nuestros servicios.</p>
     </div>
 
-    <div class="faq-accordion" data-aos="fade-up" data-aos-delay="200">
+    <div class="faq-accordion" data-animate="fade-up" data-delay="200">
       {data.items.map((item) => (
         <details class="faq-item">
           <summary class="faq-question">
@@ -103,11 +103,11 @@ import data from "../../content/home/faq.json";
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(-10px);
+      transform: translate3d(0, -10px, 0); /* GPU acceleration */
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0); /* GPU acceleration */
     }
   }
 </style>

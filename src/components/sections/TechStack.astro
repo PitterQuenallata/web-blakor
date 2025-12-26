@@ -4,24 +4,41 @@ import IconCloud from "../ui/IconCloud";
 
 const slugs = tech.technologies.map(t => t.slug);
 ---
-<section id="tech" class="tech-section" data-aos="fade-up">
+<section id="tech" class="tech-section" data-animate="fade-up">
   <div class="tech-glow"></div>
   
   <div class="container mx-auto relative z-10">
-    <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100">
+    <div class="text-center mb-20" data-animate="fade-up" data-delay="100">
       <h2 class="tech-title">{tech.title}</h2>
       <p class="tech-subtitle">{tech.subtitle}</p>
     </div>
     
-    <div class="cloud-container" data-aos="zoom-in" data-aos-delay="200">
+    <!-- PERFORMANCE: IconCloud deshabilitado temporalmente (Three.js ~150KB)
+         Causa lag significativo en el rendering inicial
+         Alternativa: Usar grid estático de iconos o habilitar con client:visible
+    -->
+    <!--
+    <div class="cloud-container" data-animate="zoom-in" data-delay="200">
       <IconCloud client:only="react" iconSlugs={slugs} />
     </div>
+    -->
 
+    <!-- Placeholder temporal: Grid estático de tecnologías -->
+    <div class="tech-grid" data-animate="fade-up" data-delay="200">
+      {tech.technologies.slice(0, 12).map((t) => (
+        <div class="tech-badge">
+          <span>{t.label}</span>
+        </div>
+      ))}
+    </div>
+
+
+    <!-- PERFORMANCE: Ticker optimizado - solo 2 copias de 10 items -->
     <div class="ticker-wrapper">
       <p class="ticker-title">Trusted by</p>
       <div class="ticker-track">
-        {[...Array(3)].map(() => (
-          tech.technologies.map((t) => (
+        {[...Array(2)].map(() => (
+          tech.technologies.slice(0, 10).map((t) => (
             <span class="ticker-item">{t.label}</span>
           ))
         ))}
@@ -44,9 +61,9 @@ const slugs = tech.technologies.map(t => t.slug);
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.15) 0%, rgba(37, 99, 235, 0.1) 40%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
     pointer-events: none;
-    filter: blur(80px);
+    /* Removed blur filter for performance */
   }
 
   .tech-title {
@@ -77,6 +94,39 @@ const slugs = tech.technologies.map(t => t.slug);
     justify-content: center;
   }
 
+  /* Static tech grid - lightweight alternative to IconCloud */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+
+  .tech-badge {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+  }
+
+  .tech-badge:hover {
+    background: rgba(220, 38, 38, 0.05);
+    border-color: rgba(220, 38, 38, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .tech-badge span {
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+
   .ticker-wrapper {
     position: relative;
     width: 100%;
@@ -98,14 +148,28 @@ const slugs = tech.technologies.map(t => t.slug);
   .ticker-track {
     display: flex;
     gap: 3rem;
-    animation: ticker 40s linear infinite;
+    animation: ticker 30s linear infinite;
+    animation-play-state: paused; /* Paused by default for performance */
     width: max-content;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    transform: translateZ(0);
+  }
+
+  /* Only animate when section is visible/hovered */
+  .ticker-wrapper:hover .ticker-track {
+    animation-play-state: running;
+  }
+
+  /* Auto-play on mobile since hover doesn't work */
+  @media (hover: none) {
+    .ticker-track {
+      animation-play-state: running;
+    }
   }
 
   @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-33.333%); }
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); } /* 50% para 2 copias */
   }
 
   .ticker-item {
@@ -118,6 +182,17 @@ const slugs = tech.technologies.map(t => t.slug);
   @media (max-width: 768px) {
     .cloud-container {
       height: 400px;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Pause all animations for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track {
+      animation: none;
     }
   }
 </style>
