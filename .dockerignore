@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build output (se genera en el container)
+dist
+
+# Development
+.astro
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# Documentation (no necesario en producción)
+*.md
+!README.md
+
+# Tests
+__tests__
+*.test.*
+*.spec.*
+coverage
