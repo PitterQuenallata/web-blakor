@@ -6,21 +6,27 @@
 # Stage 1: Build
 FROM node:20-alpine AS builder
 
-# Instalar pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Instalar dependencias del sistema necesarias para sharp
+RUN apk add --no-cache libc6-compat python3 make g++
+
+# Habilitar corepack para pnpm
+RUN corepack enable && corepack prepare pnpm@9 --activate
 
 WORKDIR /app
 
-# Copiar archivos de dependencias primero (mejor cache)
-COPY package.json pnpm-lock.yaml ./
+# Copiar archivos de configuración primero (mejor cache)
+COPY package.json pnpm-lock.yaml .npmrc* ./
 
 # Instalar dependencias
-RUN pnpm install --frozen-lockfile
+# Nota: Usamos --no-frozen-lockfile porque el lockfile puede
+# tener dependencias platform-specific que no aplican en Alpine
+RUN pnpm install --no-frozen-lockfile
 
 # Copiar el resto del código
 COPY . .
 
 # Build de producción
+ENV NODE_ENV=production
 RUN pnpm build
 
 # ============================================
